@@ -1,5 +1,5 @@
 import * as dao from "./dao.js";
-function UserRoutes(app) {
+function ReviewRoutes(app) {
  const createReview = async (req, res) => {
   const rev = await dao.createReview(req.body);
   res.json(rev);
@@ -13,4 +13,4 @@ function UserRoutes(app) {
  app.post("/api/reviews", createReview);
  app.get("/api/reviews", findAllReviews);
 }
-export default UserRoutes;
+export default ReviewRoutes;
