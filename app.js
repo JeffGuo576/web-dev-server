@@ -4,7 +4,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import UserRoutes from "./users/routes.js";
 import session from "express-session";
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/moviesdb'
+import MovieRoutes from "./movies/routes.js";
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
 console.log(CONNECTION_STRING);
 mongoose.connect(CONNECTION_STRING);
 const app = express();
@@ -32,4 +33,5 @@ app.use(session(sessionOptions));
  
 app.use(express.json());
 UserRoutes(app);
+MovieRoutes(app);
 app.listen(process.env.PORT || 4000);

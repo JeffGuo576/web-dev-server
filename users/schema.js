@@ -1,13 +1,18 @@
 import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
+    name: {type: String, required: true},
+    id: Number,
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    firstName: String,
-    email: String,
-    role: {
-      type: String,
-      enum: ["DIRECTOR", "REVIEWER", "ADMIN"],
-      default: "REVIEWER" },
+    followers: { type: [Number], default: [] },
+    following: { type: [Number], default: [] },
+    bio: { type:String, default: ""},
+    profilePicture: { type: String, default: ""},
+    userType: { type: String, enum: ["DIRECTOR", "TYPICAL USER"]},
+    email: { type: String, required: true, unique: true },
+    phoneNumber: { type:String, default: ""},
+    address: { type:String, default: ""},
+    bookmark: { type: [Number], default: []},
   },
   { collection: "users" });
   
