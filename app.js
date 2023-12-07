@@ -7,7 +7,6 @@ import ReviewRoutes from "./reviews/routes.js";
 import ResponseRoutes from "./responses/routes.js";
 import ScreeningsRoutes from "./screenings/routes.js";
 import session from "express-session";
-import ReviewRoutes from "./reviews/routes.js";
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
 
 console.log(CONNECTION_STRING);
