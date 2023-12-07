@@ -7,8 +7,9 @@ import ReviewRoutes from "./reviews/routes.js";
 import ResponseRoutes from "./responses/routes.js";
 import ScreeningsRoutes from "./screenings/routes.js";
 import session from "express-session";
-import MovieRoutes from "./movies/routes.js";
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
+import ReviewRoutes from "./reviews/routes.js";
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
+
 console.log(CONNECTION_STRING);
 mongoose.connect(CONNECTION_STRING);
 const app = express();
@@ -34,9 +35,7 @@ if (process.env.NODE_ENV !== "development") {
 app.use(session(sessionOptions));
 
 app.use(express.json());
-UserRoutes(app);
 ReviewRoutes(app);
 ResponseRoutes(app);
 ScreeningsRoutes(app);
-MovieRoutes(app);
 app.listen(process.env.PORT || 4000);
