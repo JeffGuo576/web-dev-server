@@ -37,4 +37,5 @@ app.use(express.json());
 ReviewRoutes(app);
 ResponseRoutes(app);
 ScreeningsRoutes(app);
+UserRoutes(app);
 app.listen(process.env.PORT || 4000);
