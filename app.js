@@ -4,7 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import UserRoutes from "./users/routes.js";
 import session from "express-session";
-import MovieRoutes from "./movies/routes.js";
+import ReviewRoutes from "./reviews/routes.js";
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
 console.log(CONNECTION_STRING);
 mongoose.connect(CONNECTION_STRING);
@@ -29,9 +29,7 @@ if (process.env.NODE_ENV !== "development") {
   };
 }
 app.use(session(sessionOptions));
-
- 
 app.use(express.json());
+ReviewRoutes(app);
 UserRoutes(app);
-MovieRoutes(app);
 app.listen(process.env.PORT || 4000);
