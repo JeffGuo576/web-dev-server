@@ -1,11 +1,15 @@
 import mongoose from "mongoose";
-const reviewSchema = new mongoose.Schema({
-  _id: Number,
-  movie_id: String,
-  user: String,
-  rating: Number,
-  comment: String,
-  },
-  { collection: "reviews" });
-  
+
+const reviewSchema = new mongoose.Schema(
+ {
+  _id: { type: String },
+  comment: { type: String, required: true },
+  movie_id: { type: String, required: true },
+  rating: { type: Number, required: true },
+  user: { type: String, required: true },
+  user_id { type: Number, required: true},
+ },
+ { collection: "reviews" }
+);
+
 export default reviewSchema;
