@@ -61,6 +61,11 @@ function UserRoutes(app) {
 
   };
 
+  const getTotalUsers = async (req, res) => {
+    const users = await dao.totalUsers();
+    res.json(users);
+  }
+  app.get("/api/users/totalusers", getTotalUsers);
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);

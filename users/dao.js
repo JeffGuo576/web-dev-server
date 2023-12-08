@@ -6,4 +6,4 @@ export const findUserByUsername = (username) =>  model.findOne({ username: usern
 export const findUserByCredentials = (username, password) => model.findOne({ username, password });
 export const updateUser = (userId, user) => model.updateOne({ id: userId }, { $set: user });
 export const deleteUser = (userId) => model.deleteOne({ id: userId });
-
+export const totalUsers = () => model.countDocuments();
