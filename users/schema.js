@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
   following: { type: [Number], default: [] },
   bio: { type: String, default: "" },
   profilePicture: { type: String, default: "" },
-  userType: { type: String, enum: ["DIRECTOR", "TYPICAL USER"] },
+  userType: { type: String, enum: ["Director", "Typical User"] },
   email: { type: String, required: true, unique: true },
   phoneNumber: { type: String, default: "" },
   address: { type: String, default: "" },
