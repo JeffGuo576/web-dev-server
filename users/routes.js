@@ -69,8 +69,9 @@ function UserRoutes(app) {
   app.get("/", (req, res) => {
     res.send("Welcome to Full Stack Developmen!");
    });
-
    
+
+
   app.get("/api/users/totalusers", getTotalUsers);
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);
